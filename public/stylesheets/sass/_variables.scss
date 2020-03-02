@@ -118,62 +118,6 @@ $success: #1abc9c;
   transform-origin: center;
   transition: all 0.2s ease-out;
 }
-// @mixin main-input($label, $input, $isUnderlined: false) {
-//   #{$label} {
-//     color: $heading;
-//     z-index: 999;
-//     font-size: 0.9rem;
-//     font-weight: 600;
-//     display: block;
-//     margin: 0;
-//     position: absolute;
-//     top: 0.8rem;
-//     transition: all 200ms ease-out;
-//     opacity: 0.7;
-//     pointer-events: none;
-//   }
-//   #{$input} {
-//     font-family: 'Karla';
-//     color: $text;
-//     padding: 0.7rem 0.5rem 0.7rem 0;
-//     width: 100%;
-//     font-size: 1rem;
-//     border: none;
-//     outline: none;
-//     position: relative;
-//     &:placeholder-shown + .contact-form__label {
-//       top: 0.8rem;
-//       opacity: 0.7;
-//     }
-//     &:not(:placeholder-shown) + .contact-form__label {
-//       top: -12px;
-//       opacity: 1;
-//       font-size: 86%;
-//     }
-//     &:focus + .contact-form__label {
-//       font-size: 86%;
-//       top: -12px;
-//       opacity: 1;
-//     }
-//     &:focus ~ .contact-form__underline {
-//       transform: scale(1);
-//     }
-//     &:invalid ~ .contact-form__underline {
-//       background: #e74c3c;
-//     }
-//   }
-//   @if $isUnderlined {
-//     display: block;
-//     position: absolute;
-//     bottom: 0;
-//     width: 100%;
-//     height: 2px;
-//     background: $success;
-//     transform: scale(0);
-//     transform-origin: center;
-//     transition: all 0.2s ease-out;
-//   }
-// }
 
 // for 1336 x 768
 $margin-lg: 1.875rem;
