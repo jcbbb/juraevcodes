@@ -1,0 +1,24 @@
+extends layout
+block head
+    link(rel="stylesheet" href="")
+    title juraevcodes. | Services
+block content
+    include includes/header
+    div(class="container wrapper")
+        section.left-column
+            h1(class="left-column__big-text") Providing online environment for aspiring businesses
+            p(class="left-column__sub-text") We offer full spectrum of services that generate the most remarkable results & strengthen your business
+        section.right-column
+            .right-column__image-container
+                img(class="right-column__img" src="images/services-landing.svg")
+    each section in services 
+        section(class=`${section.class}`)
+            .section__image-container
+                img(class="section__img" src=`${section.image}`)
+            .section__desription
+                h2(class="section__service-title")= section.title
+                p(class="section__service-description")= section.description
+                ul(class="section__service-benefits")
+                    each benefit in section.benefits
+                        li(class="section__service-benefit")= benefit
+    include includes/footer 

@@ -1,0 +1,102 @@
+extends layout
+block head
+	title juraevcodes. | Pricing
+block content
+	include includes/header
+	div(class="container wrapper")
+		section.left-column
+			h1(class="left-column__big-text") Simple and flexible pricing for your needs
+			p(class="left-column__sub-text") We strive to keep rates down as much as    possible while delivering high quality results.
+		section.right-column
+			.right-column__image-container
+				img(class="right-column__img" src="images/credit-card.svg")
+	.wrapper 
+		.pricing-cards
+			each plan in plans
+				div(class=(plan.bestseller ? `pricing-card pricing-card__bestseller` : 'pricing-card'))
+					h2(class="pricing-card__title")= plan.title
+					span(class="pricing-card__title-subtext")= plan.subtext
+					ul(class="pricing-card__offers")
+						each offer, index in plan.offers
+							li(class=( plan.arrow && index === 0 ? 'pricing-card__offer--back-arrow' : 'pricing-card__offer'))= offer
+					span(class="pricing-card__price")= `${plan.price}` 
+					button(class="pricing-card__btn" data-id=`${plan.id}`)= plan.cta
+	section(class="testimonials")
+		h1(class="testimonials__heading") Testimonials
+		.glider-contain
+			div(class="testimonial-cards glider")
+				each testimonial in testimonials
+					.testimonial-card
+						span(class="testimonial-card__quotes") ‘‘
+						p(class="testimonial-card__text")= testimonial.text 
+						div(class="testimonial-card__author")
+							img(src=`${testimonial.image}` class="testimonial-card__image")
+							div
+								span(class="testimonial-card__author-name")= testimonial.authorName
+								span(class="testimonial-card__author-job")= testimonial.authorJob
+			.testimonials__controls
+				button(class="testimonials__controls--left glider-prev")
+					i(class="fal fa-long-arrow-left")
+				button(class="testimonials__controls--right glider-next")
+					i(class="fal fa-long-arrow-right")
+	section(class="faq")
+		h1(class="faq__heading") Frequently Asked Questions
+		.faq-accordions
+			each faq in faqs
+				div(class="accordion")
+					input(type="checkbox" class="accordion__check" id=`${faq.id}`)
+					label(class="accordion__question" for=`${faq.id}`)= faq.question
+					.accordion__answer-panel
+						p(class="accordion__answer")= faq.answer
+	section(class="still")
+		h1(class="still__heading") Still have questions?
+		p(class="still__text") Don't hesitate to hit our inbox for further questions
+		button(class="still__cta") Let's talk
+	section(class="pricing-form-container")
+		.form-container
+			a(class="navbar__logo navbar__logo--centered")
+				img(src="images/logo.svg" class="navbar__img")
+			form(class="pricing-form" method="post" enctype="multipart/form-data")
+				.pricing-form__name 
+					input(class="pricing-form__input" name="name" placeholder=" " type="text" id="name" title="Your name without special characters. Out form validation is very weak :)" aria-required="true" spellcheck="false" required)
+					label(for="name" class="pricing-form__label") Name
+					span(class="pricing-form__underline")
+				.pricing-form__email
+					input(class="pricing-form__input" name="email" placeholder=" " type="email" id="email" title="Your email address" aria-required="true" spellsheck="false" required)
+					label(for="email" class="pricing-form__label") Email
+					span(class="pricing-form__underline")
+				.pricing-form__phone
+					input(class="pricing-form__input" name="phone" placeholder=" " class="optional" value="" type="tel" id="phone" aria-required="false")
+					label(for="phone" class="pricing-form__label") Phone (optional)
+					span(class="pricing-form__underline")
+				.pricing-form__plans
+					span(class="pricing-form__plans__label") Plans
+					each plan in plans
+						input(type="radio" id=`${plan.title}` checked=(plan.id == 0 ? 'true' : undefined) class="pricing-form__radio" value=`${plan.title}` data-id=`${plan.id}` name="plans" required)
+						label(for=`${plan.title}` class="pricing-form__radio-label")= plan.title
+				button(class="pricing-form__cta") Send
+			a(class="form-container__close")
+				i(class="fal fa-times")
+	.messageDiv
+	.question-form-container
+		.question-form-inner
+			a(class="navbar__logo navbar__logo--centered")
+					img(src="images/logo.svg" class="navbar__img")
+			form(class="question-form")
+				.question-form__email
+					input(class="question-form__input" name="email" placeholder=" " type="email" title="Your email address" aria-required="true" required spellsheck="false")
+					label(class="question-form__label") Email
+					span(class="question-form__underline")
+				.question-form__message
+					textarea(class="question-form__textarea" placeholder=" " name="message" id="messsage" required)
+					label(for="message" class="question-form__label") Mesage
+					span(class="question-form__underline")
+				button(class="question-form__cta") Send
+			a(class="question-form-inner__close")
+				i(class="fal fa-times")
+	include includes/footer
+	script(defer src="javascripts/pricing-form.js" type="module")
+	script(defer src="javascripts/question-form.js" type="module")
+	script(defer src="vendor/glider.min.js")
+	script(defer src="javascripts/glider-init.js" type="module")
+

@@ -1,0 +1,47 @@
+.contact-form-container {
+  padding: 3rem;
+  box-shadow: 3px 3px 13px rgba(0, 0, 0, 0.11);
+  width: 55%;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  &__name {
+    display: flex;
+    justify-content: space-between;
+    width:100%;
+  }
+  &__fname,
+  &__lname {
+    width:49%;
+    position:relative;
+    margin-bottom:1.4rem;
+    position:relatiev;
+  }
+  &__email,
+  &__subject,
+  &__details {
+    position: relative;
+    margin-bottom: 1.4rem;
+    width:100%;
+  }
+  &__label {
+    @include label-style($heading);
+  }
+  &__input,
+  &__textarea {
+    @include input-style(
+      $text,
+      '.contact-form__label',
+      '.contact-form__underline'
+    );
+  }
+  &__underline {
+    @include underline-style($success);
+  }
+  &__cta {
+    @include main-button($main, #fff, 5px, false, false);
+    align-self: flex-end;
+    width: 200px;
+  }
+}

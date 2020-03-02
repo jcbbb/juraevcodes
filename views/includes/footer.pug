@@ -1,0 +1,26 @@
+footer
+	.footer
+		- const footer_text = {follow:'Follow us', nav: 'Navigation', inter: 'Interested?', emailNotification: 'Leave your email and we will contact you as soon as possible.'}
+			section
+				h2(class="footer__heading")= footer_text.follow 
+				ul(class="footer__social-media")
+					- const socials = ['instagram', 'github', 'linkedin-in', 'google-plus-g']
+					each social in socials
+						li
+							a(href='#' class="footer__social-media-link")
+								i(class=`fab fa-${social}`)
+			section
+				h2(class="footer__heading")= footer_text.nav
+				ul
+					- const footer_links = ['Home', 'Services', 'Pricing', 'Contact']
+					each footer_link, index in footer_links
+						li(class=(index === 3 ? 'footer__last' : undefined))
+							a(class="footer__link" href=`${footer_link.toLowerCase()}`)= footer_link
+			section    
+				h2(class="footer__heading")=footer_text.inter
+				p(class="footer__text")= footer_text.emailNotification
+				input(type='text' placeholder='smileyface@gmail.com' class="footer__input" required)
+				input(type='submit' value='Send' class="footer__btn")
+	section.copy
+		span &copy; 2020 by juraevcodes.
+									

@@ -1,0 +1,31 @@
+[
+  {
+    "title": "Web Development",
+    "description": "Wanna take your business to the next level? Get a website! A good website builds trust with your clients and establish credibility",
+    "image": "images/web-development.svg",
+    "class": "section",
+    "benefits": [
+      "Responsive across all devices",
+      "Amazingly fast",
+      "Progressive web app"
+    ]
+  },
+  {
+    "title": "UI / UX Design",
+    "description": "There is nothing worse than bad design that puts off your potential clients. We design websites with user experience in mind that will appeal and be accessible to anyone",
+    "image": "images/ui-ux-design.svg",
+    "class": "section section__reverse",
+    "benefits": [
+      "Mobile app design",
+      "Animated prototype",
+      "Flexible and innovative solutions"
+    ]
+  },
+  {
+    "title": "Search Engine Optimization",
+    "description": "You already have a nice looking website but nobody is visiting it? We will help you rank higher on search results.",
+    "image": "images/service-seo.svg",
+    "class": "section",
+    "benefits": ["Organic traffic", "Improved conversions", "More leads"]
+  }
+]

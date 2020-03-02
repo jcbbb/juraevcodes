@@ -1,0 +1,153 @@
+@import '../components/project-card';
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 $padding-lg;
+  height: 500px;
+  max-width: 1400px;
+  margin: 0 auto 6rem auto;
+}
+.left-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  &__big-text {
+    position: relative;
+    color: $heading;
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+  &__sub-text {
+    color: $text;
+    font-size: 1.25rem;
+    margin-top: 30px;
+    position: relative;
+    width: 40ch;
+  }
+  &__btn {
+    margin-top: 60px;
+    width: 160px;
+    &--filled {
+      @include main-button($main, #fff, 5px, false, false);
+      margin-right: 16px;
+    }
+    &--outlined {
+      @include main-button(transparent, $main, 5px, true, false);
+    }
+  }
+}
+.right-column {
+  margin-right: -2rem;
+  &__image-container {
+    width: 400px;
+    height: 300px;
+  }
+  &__img {
+    max-width: 100%;
+  }
+}
+/*
+   * ------------------------------------------------------------------------
+   * Works Section Start
+   * ------------------------------------------------------------------------
+*/
+.work {
+  padding: 0 $padding-lg;
+  height: 500px;
+  max-width: 1400px;
+  margin: auto;
+  position: relative;
+  &__heading {
+    color: $heading;
+    margin-bottom: 2rem;
+  }
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  grid-gap: 1rem;
+}
+.slider {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.2);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  z-index: 99999;
+  visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 200ms ease-in-out;
+  &__slide {
+    width: 800px;
+    height: 600px;
+    overflow: hidden;
+    max-width: 100%;
+  }
+  &__slider-group {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    img {
+      max-width: 100%;
+      object-fit: contain;
+    }
+  }
+  &__prev,
+  &__next,
+  &__close {
+    position: absolute;
+    cursor: pointer;
+    font-size: 22px;
+    color: $text;
+    background: transparent;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    &:hover {
+      background: lighten($text, 10%);
+      color: #fff;
+    }
+  }
+  &__prev {
+    left: 20px;
+  }
+  &__next {
+    right: 20px;
+  }
+  &__close {
+    right: 20px;
+    top: 20px;
+  }
+  &__input {
+    display: none;
+    &:checked + .slider {
+      height: 100%;
+      width: 100%;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+#load_more {
+  background: $main;
+  color: #fff;
+  display: block;
+  width: 80px;
+  padding: 8px 36px;
+  border-radius: 5px;
+  margin-right: 0;
+  margin-left: auto;
+  margin-top: 2rem;
+  text-align: center;
+  &:hover {
+    background: lighten($color: $main, $amount: 5%);
+  }
+}

@@ -1,0 +1,64 @@
+.header {
+  top: -100px;
+  transition: all 1s ease-in-out;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 $padding-lg;
+  align-items: center;
+  background: #fff;
+  max-width: 1400px;
+  margin: auto;
+  &__logo {
+    width: 150px;
+    display: block;
+    &--centered {
+      margin: auto;
+    }
+  }
+  &__img {
+    max-width: 100%;
+  }
+}
+.sticky {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.09), 0 1px 4px rgba(0, 0, 0, 0.16);
+  position: sticky;
+  top: 0;
+  z-index: 99999;
+}
+.nav {
+  display: flex;
+  list-style: none;
+  font-family: 'Karla';
+  font-size: 1rem;
+  &__link {
+    display: block;
+    padding: 1.5rem;
+    font-size: 1.1rem;
+    position: relative;
+    color: $text;
+    &:hover {
+      color: $complement;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 0%;
+      height: 3px;
+      background: $complement;
+      transition: all 400ms ease-in-out;
+    }
+    &:hover:after {
+      width: 100%;
+      left: 0;
+    }
+  }
+  &__cta {
+    @include main-button($main, #fff, 5px, false, false);
+    margin-top: 0.7rem;
+    margin-left: 1rem;
+  }
+}

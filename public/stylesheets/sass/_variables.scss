@@ -1,0 +1,180 @@
+$main: #8c50ff;
+$heading: #2d415c;
+$text: #4a5968;
+$complement: #462880;
+$success: #1abc9c;
+
+// For 1920 x 1080
+@mixin reset {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  list-style: none;
+}
+@mixin main-button(
+  $background,
+  $color,
+  $borderRadius,
+  $isOutlined: false,
+  $isStretched: false
+) {
+  display: inline-block;
+  font-size: 1rem;
+  text-align: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: $background;
+  color: $color;
+  padding: 0.8rem 1.5rem;
+  font-family: 'Montserrat';
+  font-weight: 600;
+  border-radius: $borderRadius;
+  transition: all 200ms ease-in-out;
+  &:hover {
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.12);
+  }
+  &:disabled {
+    background: #cdcdcd;
+    color: #9e9e9e;
+    box-shadow: none;
+  }
+  @if $isOutlined {
+    padding: calc(0.8rem - 1px) 1.5rem;
+    border: 1px solid $main;
+    color: $color;
+    &:hover {
+      background: $main;
+      color: #fff;
+      border-color: transparent;
+    }
+  }
+  @if $isStretched {
+    width: 100%;
+  }
+}
+@mixin label-style($color) {
+  color: $color;
+  z-index: 999;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: block;
+  margin: 0;
+  position: absolute;
+  top: 0.8rem;
+  left:0.5rem;
+  transition: all 200ms ease-out;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+@mixin input-style($color, $label, $underline) {
+  font-family: 'Karla';
+  color: $color;
+  padding: 0.7rem 0.5rem;
+  width: 100%;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  position: relative;
+  background:#eef3fb;
+  border-radius:5px;
+  &:focus {
+    background:none;
+  }
+  &:placeholder-shown + #{$label} {
+    top: 0.8rem;
+    opacity: 0.7;
+    left:0.5rem;
+  }
+  &:not(:placeholder-shown) + #{$label} {
+    top: -12px;
+    opacity: 1;
+    font-size: 86%;
+    left:0;
+  }
+  &:focus + #{$label} {
+    font-size: 86%;
+    top: -12px;
+    left:0;
+    opacity: 1;
+  }
+  &:focus ~ #{$underline} {
+    transform: scale(1);
+  }
+  &:invalid ~ #{$underline} {
+    background: #e74c3c;
+  }
+}
+@mixin underline-style($color) {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: $color;
+  transform: scale(0);
+  transform-origin: center;
+  transition: all 0.2s ease-out;
+}
+// @mixin main-input($label, $input, $isUnderlined: false) {
+//   #{$label} {
+//     color: $heading;
+//     z-index: 999;
+//     font-size: 0.9rem;
+//     font-weight: 600;
+//     display: block;
+//     margin: 0;
+//     position: absolute;
+//     top: 0.8rem;
+//     transition: all 200ms ease-out;
+//     opacity: 0.7;
+//     pointer-events: none;
+//   }
+//   #{$input} {
+//     font-family: 'Karla';
+//     color: $text;
+//     padding: 0.7rem 0.5rem 0.7rem 0;
+//     width: 100%;
+//     font-size: 1rem;
+//     border: none;
+//     outline: none;
+//     position: relative;
+//     &:placeholder-shown + .contact-form__label {
+//       top: 0.8rem;
+//       opacity: 0.7;
+//     }
+//     &:not(:placeholder-shown) + .contact-form__label {
+//       top: -12px;
+//       opacity: 1;
+//       font-size: 86%;
+//     }
+//     &:focus + .contact-form__label {
+//       font-size: 86%;
+//       top: -12px;
+//       opacity: 1;
+//     }
+//     &:focus ~ .contact-form__underline {
+//       transform: scale(1);
+//     }
+//     &:invalid ~ .contact-form__underline {
+//       background: #e74c3c;
+//     }
+//   }
+//   @if $isUnderlined {
+//     display: block;
+//     position: absolute;
+//     bottom: 0;
+//     width: 100%;
+//     height: 2px;
+//     background: $success;
+//     transform: scale(0);
+//     transform-origin: center;
+//     transition: all 0.2s ease-out;
+//   }
+// }
+
+// for 1336 x 768
+$margin-lg: 1.875rem;
+$padding-lg: 8.6875rem;

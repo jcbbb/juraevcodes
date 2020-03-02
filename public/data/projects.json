@@ -1,0 +1,22 @@
+[
+  {
+    "id": 0,
+    "title": "My awesome company",
+    "thumbnail": "images/Final/Final.jpg",
+    "date": "February 2, 2020",
+    "srcset": "images/Final/Final-w_1400.jpg 1400w, images/Final//Final-w_1075.jpg 1075w, images/Final/Final-w_702.jpg 702w, images/Final/Final-w_200.jpg 200w",
+    "sizes": "100%",
+    "placeholder": "images/placeholder.svg",
+    "alt": "My awesome company design"
+  },
+  {
+    "id": 1,
+    "title": "Chat application",
+    "thumbnail": "images/Chat/Chat-thumb.png",
+    "date": "February 15, 2020",
+    "srcset": "images/chat/chat-thumb-w_1400.png 1400w, images/chat/chat-thumb-w_1350.png 1350w, images/chat/chat-thumb-w_1175.png 1175w, images/chat/chat-thumb-w_995.png 995w, images/chat/chat-thumb-w_782.png 782w, images/chat/chat-thumb-w_545.png 545w, images/chat/chat-thumb-w_200.png 200w",
+    "sizes": "100%",
+    "placeholder": "images/placeholder.svg",
+    "alt": "Chat application based on socket.io"
+  }
+]

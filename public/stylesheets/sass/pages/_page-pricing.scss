@@ -1,0 +1,154 @@
+@import '../components/pricing-card';
+@import '../components/testimonial-card';
+@import '../components/accordion';
+@import '../components/pricing-form';
+
+.pricing-cards,
+.faq,
+.testimonials,
+.still {
+  padding: 0 $padding-lg;
+}
+.testimonials,
+.faq {
+  min-height: 100vh;
+  &__heading {
+    font-size: 2rem;
+    color: $heading;
+    margin-bottom: 3rem;
+  }
+}
+.faq {
+  min-height: calc(100vh - 8rem);
+}
+
+.still {
+  display: flex;
+  padding: 5rem 0;
+  align-items: center;
+  flex-direction: column;
+  &__heading {
+    color: $heading;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  &__text {
+    color: $text;
+    font-size: 1.2rem;
+    font-family: 'Karla';
+  }
+  &__cta {
+    @include main-button($main, #fff, 5px, false, false);
+    width: 200px;
+    margin-top: 2rem;
+  }
+}
+
+.pricing-form-container {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.2);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container {
+  width: 420px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12), 0 2px 5px rgba(0, 0, 0, 0.04);
+  padding: 2.5rem 3rem;
+  background: #fff;
+  position: relative;
+  overflow-y: hidden;
+  &__close {
+    position: absolute;
+    right: 3rem;
+    top: 3rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: $text;
+    padding: 0.8rem;
+    margin: -0.8rem;
+  }
+}
+.messageDiv {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50px);
+  background: $success;
+  color: #fff;
+  font-weight: 400;
+  padding: 0.5rem 1.6rem;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-family: 'Karla';
+  transition: transform 1s ease-in;
+  opacity: 0;
+  &--active {
+    transform: translate(-50%, 0);
+    opacity: 1;
+    transition: transform 1s ease-in;
+  }
+}
+
+.question-form-container {
+  @extend .pricing-form-container;
+}
+.question-form-inner {
+  width: 550px;
+  padding: 2rem 4rem;
+  position: relative;
+  background: #fff;
+  &__close {
+    @extend .form-container__close;
+  }
+}
+.question-form {
+  @extend .pricing-form;
+  &__email,
+  &__message {
+    position: relative;
+    margin-bottom: 1.4rem;
+    width:100%;
+  }
+  &__label {
+    @extend .contact-form__label;
+  }
+  &__input {
+    @extend .contact-form__input;
+    &:placeholder-shown + .question-form__label {
+      top: 0.8rem;
+      opacity: 0.7;
+    }
+    &:not(:placeholder-shown) + .question-form__label {
+      top: -12px;
+      opacity: 1;
+      font-size: 86%;
+    }
+    &:focus + .question-form__label {
+      font-size: 86%;
+      top: -12px;
+      opacity: 1;
+    }
+    &:focus ~ .question-form__underline {
+      transform: scale(1);
+    }
+  }
+  &__textarea {
+    @extend .contact-form__textarea;
+    max-width: 100%;
+    height: 150px;
+    margin-bottom: 0;
+  }
+  &__cta {
+    @extend .pricing-form__cta;
+  }
+  &__underline {
+    @extend .contact-form__underline;
+  }
+}

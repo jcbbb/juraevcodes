@@ -1,0 +1,26 @@
+[
+  {
+    "authorName": "John Doe",
+    "authorJob": "Comedia at Lightbulb club",
+    "image": "images/man.svg",
+    "text": "Listing bookMyShow has made my brand presence stronger and gave me the edge over my competitors, by increasing my sales by 5x"
+  },
+  {
+    "authorName": "Jane Doe",
+    "authorJob": "Dancer at cheesecake factory",
+    "image": "images/woman.svg",
+    "text": "We have been using juraevcodes. since 2009, and I have to say that it has transformed the way we do business."
+  },
+  {
+    "authorName": "Gary Simon",
+    "authorJob": "Host of Designcourse",
+    "image": "images/man.svg",
+    "text": "We have been using juraevcodes. since 2009, and I have to say that it has transformed the way we do business."
+  },
+  {
+    "authorName": "Gary Simon",
+    "authorJob": "Host of Designcourse",
+    "image": "images/man.svg",
+    "text": "We have been using juraevcodes. since 2009, and I have to say that it has transformed the way we do business."
+  }
+]

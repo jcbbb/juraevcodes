@@ -1,0 +1,50 @@
+@import '_variables';
+@import 'components/header';
+@import 'components/footer';
+@import 'pages/page-home';
+@import 'pages/page-services';
+@import 'pages/page-pricing';
+@import 'pages/page-contact';
+@import 'pages/page-start-project';
+
+* {
+  @include reset;
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+p {
+  font-family: 'Karla', sans-serif;
+  line-height: 1.4;
+}
+/*
+   * ------------------------------------------------------------------------
+   * Header Start
+   * ------------------------------------------------------------------------
+*/
+
+/*
+   * ------------------------------------------------------------------------
+   * Landing Section Start
+   * ------------------------------------------------------------------------
+*/
+
+/*
+   * ------------------------------------------------------------------------
+   * Footer Section Start
+   * ------------------------------------------------------------------------
+*/
+
+/*
+   * ------------------------------------------------------------------------
+   * Services Page Styles
+   * ------------------------------------------------------------------------
+*/

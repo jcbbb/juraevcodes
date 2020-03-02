@@ -1,0 +1,47 @@
+[
+  {
+    "id": 0,
+    "title": "Basic",
+    "subtext": "Basic website for everyone",
+    "offers": [
+      "Up to 3 pages",
+      "Mobile responsive",
+      "Free .uz domain",
+      "One-month free support"
+    ],
+    "price": "$199",
+    "cta": "Select"
+  },
+  {
+    "id": 1,
+    "title": "Startup",
+    "subtext": "Best for new businesses",
+    "offers": [
+      "Everything included in Basic, plus:",
+      "Custom design",
+      "3 more pages",
+      "Simple SEO"
+    ],
+    "price": "$549",
+    "cta": "Select",
+    "arrow": true,
+    "bestseller": true
+  },
+  {
+    "id": 2,
+    "title": "Enterprise",
+    "subtext": "Best for large companies",
+    "offers": [
+      "Everything included in Startup, plus:",
+      "E-commerce",
+      "Mobile apps",
+      "Robust SEO",
+      "24/7 Support",
+      "Jimmy",
+      "Hey"
+    ],
+    "price": "",
+    "arrow": true,
+    "cta": "Contact us"
+  }
+]

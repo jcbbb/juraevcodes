@@ -1,0 +1,30 @@
+@import '../components/contact-form';
+.contact {
+  padding: 0 $padding-lg;
+  display: flex;
+  align-items: flex-start;
+}
+.contact-information {
+  box-shadow: 3px 3px 13px rgba(0, 0, 0, 0.11);
+  width: 30%;
+  padding: 3rem;
+  margin-left: 3rem;
+  &__heading {
+    color: $heading;
+    font-size: 1rem;
+    margin-bottom: 1.4rem;
+  }
+  &__link {
+    display: block;
+    color: $text;
+    font-size: 0.9rem;
+    margin: 0.8rem 0;
+    font-family: 'Karla';
+    font-size: 1rem;
+    &__icon {
+      margin-right: 10px;
+      font-size: 1rem;
+      font-weight: 200;
+    }
+  }
+}

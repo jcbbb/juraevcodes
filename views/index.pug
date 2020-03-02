@@ -1,0 +1,39 @@
+extends layout
+block content
+	include includes/header
+	main
+		.container
+			section.left-column
+				h1(class="left-column__big-text") Powerful websites for growing companies
+				p(class="left-column__sub-text") The goal isn't to build a website. The goal is to grow your online business.
+				div(class='left-column__cta stagger')
+					a(class='left-column__btn left-column__btn--filled' href='#work') View work 
+					a(class='left-column__btn left-column__btn--outlined') Learn more
+			section.right-column
+				.right-column__image-container
+					img(class="right-column__img" src='images/business.svg')
+	div(class='work' id='work')
+		h1(class="work__heading") Selected projects
+		div(class='cards' id='cards')
+			each project, index in projects
+				div(class='card')
+					a(class="card__image-container" href="")
+						img(src=`${project.placeholder}` class="card__image" alt=`${project.alt}` data-src=`${project.thumbnail}` loading='lazy' srcset=`${project.srcset}` sizes=`${project.sizes}`)
+					.card__over
+						strong(class="card__title")= project.title
+						span(class="card__date")= project.date
+						label(class='card__shots' for='shots' data-id=`${project.id}`) Shots
+						a(href='' class='card__link') Visit
+			input(type='checkbox' id='shots' class="slider__input")
+			.slider
+				.slider__slide
+					.slider__slider-group
+				.slider__prev
+					i(class='fas fa-chevron-left')
+				.slider__next
+					i(class='fas fa-chevron-right')
+				label(class='slider__close' for='shots')
+					i(class='fas fa-times')
+	include includes/footer
+	script(defer src='javascripts/slider.js' type="module")
+

@@ -1,0 +1,61 @@
+.wrapper {
+  margin-bottom: 13rem;
+}
+.section {
+  height: calc(100vh - 120px);
+  width: 100%;
+  display: flex;
+  padding: 0 9.5rem;
+  justify-content: space-between;
+  scroll-snap-align: start;
+  &__desription {
+    width: 50%;
+  }
+  &__service-description {
+    font-size: 1.2rem;
+    color: $text;
+  }
+  &__service-title {
+    color: $heading;
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  &__img {
+    width: 380px;
+  }
+  &__service-benefits {
+    font-family: 'Karla';
+    font-size: 1.2rem;
+    color: $text;
+    margin-top: 1rem;
+  }
+  &__service-benefit {
+    position: relative;
+    line-height: 1.8;
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: $main;
+      margin-right: 1rem;
+      margin-left: 4px;
+    }
+    &:after {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: lighten($color: $main, $amount: 24%);
+      position: absolute;
+      top: 7px;
+      left: 0px;
+      z-index: -1;
+    }
+  }
+  &__reverse {
+    flex-direction: row-reverse;
+  }
+}

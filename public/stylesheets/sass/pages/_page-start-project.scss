@@ -1,0 +1,170 @@
+.project-starter {
+  padding: 0 $padding-lg;
+  max-width: 1400px;
+}
+.stepper {
+  display: flex;
+  &__steps {
+    counter-reset: step;
+  }
+  &__step {
+    display: flex;
+  }
+  &__info {
+    text-align: right;
+    width: 150px;
+    margin-bottom: 4rem;
+    margin-right: 2rem;
+  }
+  &__title {
+    display: block;
+    color: $heading;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  &__subtitle {
+    color: $text;
+    font-family: 'Karla';
+    font-size: 0.9rem;
+  }
+  &__number {
+    display: block;
+    border: 1px solid rgba(1, 1, 1, 0.6);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    line-height: 46px;
+    text-align: center;
+    color: $text;
+    font-weight: 600;
+    position: relative;
+    background: #fff;
+    &:before {
+      content: counter(step);
+      counter-increment: step;
+    }
+    &:after {
+      content: '';
+      width: 100px;
+      height: 1px;
+      display: block;
+      background: rgba(1, 1, 1, 0.6);
+      position: absolute;
+      transform: rotate(90deg) translateY(26px) translateX(46px);
+      z-index: -111;
+    }
+    &--active {
+      background: $main;
+      color: #fff;
+      border-color: transparent;
+      &:after {
+        background: $main;
+      }
+    }
+  }
+  &__form {
+    width: 100%;
+    padding-left: 3rem;
+  }
+  &__controls {
+    align-self: flex-end;
+    margin-top:2rem;
+  }
+}
+
+.field-group-container {
+  display: flex;
+  justify-content: space-between;
+}
+.field-group {
+  width: 49%;
+  &__fname,
+  &__email,
+  &__phone,
+  &__cname,
+  &__pname,
+  &__services,
+  &__websites,
+  &__description {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+  &__label {
+    @include label-style($heading);
+    &--not-floating {
+      color:$heading;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: block;
+      padding-top: 0.8rem;
+      opacity: 0.7;
+      pointer-events: none;
+    }
+    &--check {
+      color:$heading;
+      font-weight:600;
+      font-size:0.9rem;
+      opacity:0.7;
+      display:inline-block;
+      margin-top:1rem;
+      margin-left:6px;
+      margin-right:20px;
+      cursor:pointer;
+    }
+  }
+  &__input {
+    @include input-style(
+      $text,
+      '.field-group__label',
+      '.field-group__underline'
+    );
+  }
+  
+  &__underline {
+    @include underline-style($success);
+  }
+  &__checkbox {
+    appearance:none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    width:17px;
+    height:17px;
+    border:none;
+    border-radius:5px;
+    outline:none;
+    transition: 200ms ease-in-out;
+    background:rgba(0,0,0,0.3);
+    cursor:pointer;
+    display:inline-block;
+    vertical-align:middle;
+    &:checked {
+      background:$heading;
+    }
+  }
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.fieldset {
+  border: none;
+  margin-top: 0.8rem;
+  width: 100%;
+  &__legend {
+    color: $heading;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+  }
+  &__next-btn,
+  &__prev-btn {
+    @include main-button($main, #fff, 5px, false, false);
+  }
+  &__prev-btn {
+    margin-right:0.8rem;
+  }
+}
+
+

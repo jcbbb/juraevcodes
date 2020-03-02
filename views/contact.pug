@@ -1,0 +1,49 @@
+extends layout
+block head
+block content
+	include includes/header
+	div(class="container wrapper" style="margin-bottom: 0;")
+		section.left-column
+			h1(class="left-column__big-text") We would love to hear from you
+			p(class="left-column__sub-text") Our team is happy to answer your questions. Fill out the form and we will be in touch as soon as possible
+		section.right-column
+			.right-column__image-container
+				img(class="right-column__img" src="images/contact.svg")
+	section(class="contact")
+		.contact-form-container
+			form(class="contact-form")
+				.contact-form__name
+					.contact-form__fname
+						input(type="text" class="contact-form__input" placeholder=" " id="fname" required)
+						label(for="fname" class="contact-form__label") First Name
+						span(class="contact-form__underline")
+					.contact-form__lname
+						input(type="text" class="contact-form__input" placeholder=" " id="lname" required)
+						label(for="lname" class="contact-form__label") Last Name
+						span(class="contact-form__underline")
+				.contact-form__email
+					input(type="email" class="contact-form__input" placeholder=" " id="contact-email" required)
+					label(for="contact-email" class="contact-form__label") Email
+					span(class="contact-form__underline")
+				.contact-form__subject
+					input(type="text" class="contact-form__input" placeholder=" " id="contact-subject" required)
+					label(for="contact-subject" class="contact-form__label") Subject
+					span(class="contact-form__underline")
+				.contact-form__details
+					textarea(class="contact-form__textarea" placeholder=" " id="contact-details" cols="80" rows="4" required)
+					label(for="contact-details" class="contact-form__label") Anything else?
+					span(class="contact-form__underline")
+				button(class="contact-form__cta" type="submit") Submit
+		.contact-information
+			.contact-information__inner
+				h1(class="contact-information__heading") Contact information
+				a(class="contact-information__link")
+					i(class="fal fa-map-marker-alt contact-information__link__icon")
+					| Uzbekistan, Namangan
+				a(href="tel:+998939152000" class="contact-information__link") 
+					i(class="fal fa-phone-alt contact-information__link__icon")
+					| +998 93 915 20
+				a(href="email:info@juraev.codes" class="contact-information__link")
+					i(class="fal fa-envelope contact-information__link__icon")
+					| info@juraev.codes
+	include includes/footer

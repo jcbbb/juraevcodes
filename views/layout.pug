@@ -1,0 +1,29 @@
+doctype html
+html
+	head
+		block head
+			meta(name='viewport', content='width=device-width', initial-scale=1.0)
+			title juraevcodes. | Home
+		link(rel='preload' as='style' onload='this.rel="stylesheet"' href='https://pro.fontawesome.com/releases/v5.12.0/css/all.css')
+		link(rel='preconnect' href='https://fonts.gstatic.com/' crossorigin)
+		link(rel='preload' as='style' onload='this.rel="stylesheet"' href="https://fonts.googleapis.com/css?family=Montserrat:600,700&display=swap" crossorigin)
+		link(rel='preload' as='style' onload='this.rel="stylesheet"' href="https://fonts.googleapis.com/css?family=Karla&display=swap" crossorigin)
+		link(rel='stylesheet', href='/stylesheets/main.css')
+		noscript
+			link(rel='stylesheet' href='https://pro.fontawesome.com/releases/v5.12.0/css/all.css')
+			link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:600,700&display=swap')
+			link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Karla&display=swap')
+	body
+		block content
+		.content
+		script. 
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker.register('/sw.js')
+				.then((reg) => {
+					console.log('Service worker registered with scope: ', reg.scope)
+				})
+				.catch((err) => {
+					console.log('Service worker registration failed', err)
+				})
+			}
+		script(defer src='javascripts/index.js' type="module")

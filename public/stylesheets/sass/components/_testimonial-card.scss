@@ -1,0 +1,72 @@
+@import '../components/glider';
+.testimonials {
+  &__controls {
+    width: 120px;
+    margin: 3rem auto;
+    &--left,
+    &--right {
+      @include main-button($main, #fff, 50%, false, false);
+      padding: 0;
+      width: 45px;
+      height: 45px;
+      i {
+        line-height: 45px;
+        font-size: 1.3rem;
+        font-weight: 500;
+      }
+    }
+    &--left {
+      margin-right: 0.8rem;
+    }
+  }
+}
+
+.testimonial-cards {
+  margin-top: -1.2rem;
+}
+.testimonial-card {
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  border-radius: 5px;
+  border-top: 4px solid $main;
+  margin-top: 1.2rem;
+  margin: 1.2rem 0.4rem;
+  &__quotes {
+    position: absolute;
+    top: -3rem;
+    left: 1.6rem;
+    font-size: 8rem;
+    letter-spacing: -10px;
+    color: $main;
+  }
+  &__text {
+    font-size: 1.1rem;
+    color: $text;
+    padding: 2rem;
+    height: calc(100% - 100px);
+  }
+  &__author {
+    border-top: 1px solid #e2e2e2;
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
+  &__image {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    margin-right: 1rem;
+    max-width: 100%;
+  }
+  &__author-name {
+    color: $heading;
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+  &__author-job {
+    color: $text;
+    font-family: 'Karla';
+    font-size: 0.95rem;
+  }
+}

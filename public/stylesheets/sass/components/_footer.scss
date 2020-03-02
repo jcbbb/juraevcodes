@@ -1,0 +1,96 @@
+footer {
+  background: #262626;
+}
+.footer {
+  padding: (3 * $margin-lg) $padding-lg;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: auto;
+  &__heading {
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 1.1rem;
+  }
+  &__logo {
+    width: 150px;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  &__img {
+    max-width: 100%;
+  }
+  &__social-media {
+    display: flex;
+  }
+  &__link {
+    color: rgba(255, 255, 255, 0.6);
+    transition: color 200ms ease-in-out;
+    font-family: 'Karla';
+    &:hover {
+      color: #fff;
+    }
+  }
+  &__social-media-link {
+    background: #2e2e2e;
+    color: rgba(255, 255, 255, 0.6);
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    margin-right: 16px;
+    border-radius: 8px;
+    transition: background 200ms ease-in-out;
+    &:hover {
+      background: lighten($color: #2e2e2e, $amount: 2%);
+      color: #fff;
+    }
+    i {
+      line-height: 40px;
+      font-size: 20px;
+    }
+  }
+  &__text {
+    width: 32ch;
+    font-family: 'Karla';
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 24px;
+  }
+  &__btn {
+    @include main-button(#2e2e2e, #fff, 5px, false, false);
+    font-size: 15px;
+    width: 120px;
+    margin-top: 10px;
+    &:hover {
+      background: lighten($color: #2e2e2e, $amount: 2%);
+    }
+  }
+  &__input {
+    border-radius: 5px;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 0.8rem 10px;
+    background: #2e2e2e;
+    outline: none;
+    border: none;
+    display: block;
+    margin-top: 20px;
+    width: 80%;
+    &::placeholder {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+      letter-spacing: 0.5px;
+    }
+  }
+  li:not(.footer__last) {
+    margin-bottom: 14px;
+  }
+}
+.copy {
+  height: 100px;
+  font-size: 0.9rem;
+  background: #2b2b2b;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 100px;
+}

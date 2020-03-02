@@ -1,0 +1,11 @@
+header(class="header")
+	nav(class="navbar")
+		a(class="navbar__logo" href="/")
+			img(src="images/logo.svg" class="navbar__img")
+		ul.nav
+			- const links = ['Home', 'Services', 'Pricing', 'Contact', 'Start a project']
+			each link, index in links
+				li
+					a(href=(index === 0 ? '/' : `${link.toLowerCase().replace(/\s/g, '-')}`) class=(index === 4 ? "nav__cta" : "nav__link"))= link
+
+

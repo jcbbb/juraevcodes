@@ -1,0 +1,68 @@
+[
+  {
+    "id": 0,
+    "placeholder": "images/placeholder.svg",
+    "imgSrc": [
+      "images/Adventurer.jpg",
+      "images/Final.jpg",
+      "images/media-world-thumb.png"
+    ],
+    "srcSet": [
+      {
+        "src": "images/Adventurer.jpg 1500w"
+      },
+      {
+        "src": "images/Final.jpg 1500w"
+      },
+      {
+        "src": "images/media-world-thumb.png 1500w"
+      }
+    ],
+    "alt": ["Adventurer", "Final Design", "Media World"],
+    "loading": "lazy"
+  },
+  {
+    "id": 1,
+    "placeholder": "images/placeholder.svg",
+    "imgSrc": [
+      "images/Adventurer.jpg",
+      "images/Final.jpg",
+      "images/media-world-thumb.png"
+    ],
+    "srcSet": [
+      {
+        "src": "images/Adventurer.jpg 1500w"
+      },
+      {
+        "src": "images/Final.jpg 1500w"
+      },
+      {
+        "src": "images/media-world-thumb.png 1500w"
+      }
+    ],
+    "alt": ["Adventurer", "Final Design", "Media World"],
+    "loading": "lazy"
+  },
+  {
+    "id": 2,
+    "placeholder": "images/placeholder.svg",
+    "imgSrc": [
+      "images/Adventurer.jpg",
+      "images/Final.jpg",
+      "images/media-world-thumb.png"
+    ],
+    "srcSet": [
+      {
+        "src": "images/Adventurer.jpg 1500w"
+      },
+      {
+        "src": "images/Final.jpg 1500w"
+      },
+      {
+        "src": "images/media-world-thumb.png 1500w"
+      }
+    ],
+    "alt": ["Adventurer", "Final Design", "Media World"],
+    "loading": "lazy"
+  }
+]

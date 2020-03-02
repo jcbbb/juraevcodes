@@ -1,0 +1,42 @@
+[
+  {
+    "id": 0,
+    "question": "How long does it take to finish a website?",
+    "answer": "Each project is different, but on average we launch websites within 2 to 6 weeks. It all depends on project requirements."
+  },
+  {
+    "id": 1,
+    "question": "What forms of payment do you accept?",
+    "answer": "We accept VISA, Uzcard, Payme, Click. We don't store any payment information. Payments are done in secure environment provided by third-party gateways"
+  },
+  {
+    "id": 2,
+    "question": "Do you offer a warranty",
+    "answer": "Absolutely yes! Bug fixed are included in every of our plan. We'll keep your website bug-free as long as specified by plan"
+  },
+  {
+    "id": 3,
+    "question": "What does mobile responsive mean?",
+    "answer": "Responsive design technique is used to build websites that adapts to device viewport. Instead of building seperate website for mobile devices, you build a single website that works well across all devices."
+  },
+  {
+    "id": 4,
+    "question": "Do your websites include content management system?",
+    "answer": "It depends on your requirements. If you want a blog, there sure will be a CMS installed, but for simple Basic plan websites we don't offer CMS"
+  },
+  {
+    "id": 5,
+    "question": "Can you help me get my website to show up on Google?",
+    "answer": "While it's almost always possible to get your website show up for brand searches, meaning someone typing in your business name, it can be much more difficult to compete on popular keywords. We can't guarantee that your website will rank high. In fact, if anyone guarantees that, be very careful."
+  },
+  {
+    "id": 6,
+    "question": "Do you supply content for my website",
+    "answer": "No, the client is responsible for supplying content. However, we can offer some guidance and assistance."
+  },
+  {
+    "id": 7,
+    "question": "Can I update my website on my own?",
+    "answer": "Yes, you can. When we launch your website we will teach you how to manage and do some edits to your website."
+  }
+]

@@ -1,0 +1,62 @@
+.faq-accordions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.accordion {
+  width: 500px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12), 0 2px 5px rgba(0, 0, 0, 0.04);
+  border-radius: 5px;
+  margin: 0 1rem 1rem 0;
+  &__question {
+    font-weight: 600;
+    font-size: 1.14rem;
+    line-height: 1.4;
+    color: $heading;
+    cursor: pointer;
+    display: block;
+    padding: 1.4rem 2rem;
+    border-radius: 5px;
+    &:before {
+      content: '\f067';
+      font-family: 'Font Awesome 5 Pro';
+      color: $main;
+      margin-right: 10px;
+      font-size: 16px;
+    }
+    &:hover {
+      background: $heading;
+      color: #fff;
+    }
+    &:hover:before {
+      color: #fff;
+    }
+  }
+  &__answer-panel {
+    display: none;
+    overflow: hidden;
+    padding: 1.4rem 2rem;
+  }
+  &__answer {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: $text;
+  }
+  &__check {
+    display: none;
+    &:checked ~ .accordion__answer-panel {
+      display: block;
+      animation: slideDown 0.3s ease-in-out;
+    }
+    &:checked ~ .accordion__question {
+      background: $heading;
+      color: #fff;
+      border-radius: 5px 5px 0 0;
+    }
+    &:checked ~ .accordion__question:before {
+      content: '\f068';
+      font-family: 'Font Awesome 5 Pro';
+      color: #fff;
+    }
+  }
+}
