@@ -1,6 +1,7 @@
 .project-starter {
   padding: 0 $padding-lg;
-  max-width: 1400px;
+  @include container;
+  margin: 5rem auto;
 }
 .stepper {
   display: flex;
@@ -68,7 +69,7 @@
   }
   &__controls {
     align-self: flex-end;
-    margin-top:2rem;
+    margin-top: 2rem;
   }
 }
 
@@ -92,7 +93,7 @@
   &__label {
     @include label-style($heading);
     &--not-floating {
-      color:$heading;
+      color: $heading;
       font-size: 0.9rem;
       font-weight: 600;
       display: block;
@@ -101,15 +102,15 @@
       pointer-events: none;
     }
     &--check {
-      color:$heading;
-      font-weight:600;
-      font-size:0.9rem;
-      opacity:0.7;
-      display:inline-block;
-      margin-top:1rem;
-      margin-left:6px;
-      margin-right:20px;
-      cursor:pointer;
+      color: $heading;
+      font-weight: 600;
+      font-size: 0.9rem;
+      opacity: 0.7;
+      display: inline-block;
+      margin-top: 1rem;
+      margin-left: 6px;
+      margin-right: 20px;
+      cursor: pointer;
     }
   }
   &__input {
@@ -119,27 +120,30 @@
       '.field-group__underline'
     );
   }
-  
+  &__textarea {
+    height: 200px;
+  }
+
   &__underline {
     @include underline-style($success);
   }
   &__checkbox {
-    appearance:none;
+    appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     -o-appearance: none;
-    width:17px;
-    height:17px;
-    border:none;
-    border-radius:5px;
-    outline:none;
+    width: 17px;
+    height: 17px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
     transition: 200ms ease-in-out;
-    background:rgba(0,0,0,0.3);
-    cursor:pointer;
-    display:inline-block;
-    vertical-align:middle;
+    background: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
     &:checked {
-      background:$heading;
+      background: $heading;
     }
   }
 }
@@ -163,8 +167,6 @@ form {
     @include main-button($main, #fff, 5px, false, false);
   }
   &__prev-btn {
-    margin-right:0.8rem;
+    margin-right: 0.8rem;
   }
 }
-
-

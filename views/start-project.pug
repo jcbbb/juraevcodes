@@ -1,75 +1,98 @@
 extends layout
 block head
-    link(rel="stylesheet" href="")
-    title juraevcodes. | Start a project
+  link(rel="stylesheet" href="")
+  title juraevcodes. | Start a project
 block content
-    include includes/header
-    .project-starter
-        .stepper
-            .stepper__bar
-                ul(class="stepper__steps")
-                    li(class="stepper__step")
-                        .stepper__info
-                            span(class="stepper__title") General
-                            small(class="stepper__subtitle") Let us know a bit about yourself
-                        span(class="stepper__number stepper__number--active")
-                    li(class="stepper__step")
-                        .stepper__info
-                            span(class="stepper__title") Project
-                            small(class="stepper__subtitle") Detailed information about your project
-                        span(class="stepper__number")
-                    li(class="stepper__step")
-                        .stepper__info
-                            span(class="stepper__title") Budget
-                            small(class="stepper__subtitle") Information about deadline and budget
-                        span(class="stepper__number")
-            .stepper__form
-                form(method="post" enctype="multipart/form-data")
-                    fieldset(class="fieldset")
-                        legend(class="fieldset__legend") General
-                        .field-group-container
-                            .field-group
-                                .field-group__fname
-                                    input(type="text" class="field-group__input" placeholder=" " id="fname" required)
-                                    label(for="fname" class="field-group__label") Name
-                                    span(class="field-group__underline")
-                                .field-group__email
-                                    input(type="email" class="field-group__input" placeholder=" " id="contact-email" required)
-                                    label(for="contact-email" class="field-group__label") Email
-                                    span(class="field-group__underline")
-                            .field-group
-                                .field-group__phone
-                                    input(class="field-group__input" name="phone" placeholder=" " class="optional" value="" type="tel" id="phone" aria-required="false")
-                                    label(for="phone" class="field-group__label") Phone (optional)
-                                    span(class="field-group__underline")
-                                .field-group__cname
-                                    input(class="field-group__input" name="cname" placeholder=" " class="optional" value="" type="tel" id="cname" aria-required="false")
-                                    label(for="cname" class="field-group__label") Company name (optional)
-                                    span(class="field-group__underline")
-                    fieldset(class="fieldset")
-                        legend(class="fieldset__legend") Project
-                        .field-group-container
-                            .field-group
-                                .field-group__pname
-                                    input(type="text" class="field-group__input" placeholder=" " id="fname" required)
-                                    label(for="fname" class="field-group__label") Project name
-                                    span(class="field-group__underline")
-                                .field-group__services
-                                    label(class="field-group__label--not-floating") Select the services you need
-                                    input(type="checkbox" class="field-group__checkbox" id="service_1")
-                                    label(for="service_1" class="field-group__label--check") Web Design
-                                    input(type="checkbox" class="field-group__checkbox" id="service_2")
-                                    label(for="service_2" class="field-group__label--check") Hosting
-                            .field-group
-                                .field-group__websites
-                                    input(class="field-group__input" name="websites" placeholder=" " value="" id="websites" aria-required="false")
-                                    label(for="websites" class="field-group__label") Websites you like
-                                    span(class="field-group__underline")
-                                .field-group__description
-                                    textarea(class="field-group__input" name="description" placeholder=" " value="" id="pdescription" aria-required="true" required)
-                                    label(for="pdescription" class="field-group__label") Project description
-                                    span(class="field-group__underline")
-                    .stepper__controls
-                        button(class="fieldset__prev-btn" disabled) Prev
-                        button(class="fieldset__next-btn") Next
-    include includes/footer
+  include includes/header
+  .project-starter
+    .stepper
+      .stepper__bar
+        ul(class="stepper__steps")
+          li(class="stepper__step")
+              .stepper__info
+                  span(class="stepper__title") General
+                  small(class="stepper__subtitle") Let us know a bit about yourself
+              span(class="stepper__number stepper__number--active")
+          li(class="stepper__step")
+              .stepper__info
+                  span(class="stepper__title") Project
+                  small(class="stepper__subtitle") Detailed information about your project
+              span(class="stepper__number")
+          li(class="stepper__step")
+              .stepper__info
+                  span(class="stepper__title") Budget
+                  small(class="stepper__subtitle") Information about deadline and budget
+              span(class="stepper__number")
+      .stepper__form
+        form(method="post" enctype="multipart/form-data")
+          fieldset(class="fieldset")
+            legend(class="fieldset__legend") General
+            .field-group-container
+              .field-group
+                .field-group__fname
+                  input(type="text" class="field-group__input" placeholder=" " id="fname" required)
+                  label(for="fname" class="field-group__label") Name
+                  span(class="field-group__underline")
+                .field-group__email
+                  input(type="email" class="field-group__input" placeholder=" " id="contact-email" required)
+                  label(for="contact-email" class="field-group__label") Email
+                  span(class="field-group__underline")
+              .field-group
+                .field-group__phone
+                  input(class="field-group__input" name="phone" placeholder=" " class="optional" value="" type="tel" id="phone" aria-required="false")
+                  label(for="phone" class="field-group__label") Phone (optional)
+                  span(class="field-group__underline")
+                .field-group__cname
+                    input(class="field-group__input" name="cname" placeholder=" " class="optional" value="" type="tel" id="cname" aria-required="false")
+                    label(for="cname" class="field-group__label") Company name (optional)
+                    span(class="field-group__underline")
+          fieldset(class="fieldset")
+            legend(class="fieldset__legend") Project
+            .field-group-container
+              .field-group
+                .field-group__pname
+                  input(type="text" class="field-group__input" placeholder=" " id="pname" required)
+                  label(for="pname" class="field-group__label") Project name
+                  span(class="field-group__underline")
+                .field-group__services
+                  label(class="field-group__label--not-floating") Select the services you need
+                  each service in services
+                    .field-group__service
+                      input(type="checkbox" class="field-group__checkbox" id=`service_${service.id}`)
+                      label(for=`service_${service.id}` class="field-group__label--check")= service.title
+              .field-group
+                .field-group__websites
+                  input(class="field-group__input" name="websites" placeholder=" " value="" id="websites" aria-required="false")
+                  label(for="websites" class="field-group__label") Websites you like
+                  span(class="field-group__underline")
+                .field-group__description
+                  textarea(class="field-group__input field-group__textarea" name="description" placeholder=" " value="" id="pdescription" aria-required="true" required)
+                  label(for="pdescription" class="field-group__label") Project description
+                  span(class="field-group__underline")
+          fieldset(class="fieldset")
+            legend(class="fieldset__legend") Budget
+            .field-group-container
+              .field-group
+                .field-group__pname
+                  input(type="text" class="field-group__input" placeholder=" " id="deadline" required)
+                  label(for="deadline" class="field-group__label") Deadline
+                  span(class="field-group__underline")
+                .field-group__services
+                  label(class="field-group__label--not-floating") Basic structure
+                  each page in structures
+                    .field-group__service
+                        input(type="checkbox" class="field-group__checkbox" id=`page_${page.id}`)
+                        label(for=`page_${page.id}` class="field-group__label--check")= page.title
+              .field-group
+                .field-group__websites
+                  input(class="field-group__input" name="websites" placeholder=" " value="" id="budget" aria-required="false")
+                  label(for="budget" class="field-group__label") Budget in US dollars
+                  span(class="field-group__underline")
+                .field-group__description
+                  input(class="field-group__input" name="description" placeholder=" " value="" id="lang" aria-required="true" required)
+                  label(for="lang" class="field-group__label") Website language
+                  span(class="field-group__underline")
+          .stepper__controls
+              button(class="fieldset__prev-btn" disabled) Prev
+              button(class="fieldset__next-btn") Next
+  include includes/footer

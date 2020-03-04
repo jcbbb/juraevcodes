@@ -8,6 +8,7 @@
 .testimonials,
 .still {
   padding: 0 $padding-lg;
+  @include container;
 }
 .testimonials,
 .faq {

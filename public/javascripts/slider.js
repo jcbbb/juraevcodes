@@ -1,10 +1,5 @@
 import {
-  select,
-  selectAll,
-  createElement,
-  validate,
-  readJSON,
-  logError,
+  select, selectAll, createElement, validate, readJSON, logError,
 } from './helpers.js';
 import { lazyLoad } from './lazyload.js';
 
@@ -82,7 +77,6 @@ import { lazyLoad } from './lazyload.js';
       }
     });
   });
-
   // Close slider when clicked anywhere outside slider;
   const sliderContainer = select('.slider');
   const closeBtn = select('.slider__close');

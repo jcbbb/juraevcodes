@@ -1,11 +1,11 @@
 @import '../components/project-card';
 .container {
+  @include container;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 $padding-lg;
   height: 500px;
-  max-width: 1400px;
   margin: 0 auto 6rem auto;
 }
 .left-column {
@@ -54,10 +54,9 @@
    * ------------------------------------------------------------------------
 */
 .work {
+  @include container;
   padding: 0 $padding-lg;
   height: 500px;
-  max-width: 1400px;
-  margin: auto;
   position: relative;
   &__heading {
     color: $heading;

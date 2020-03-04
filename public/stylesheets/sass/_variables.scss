@@ -39,6 +39,7 @@ $success: #1abc9c;
     background: #cdcdcd;
     color: #9e9e9e;
     box-shadow: none;
+    cursor: default;
   }
   @if $isOutlined {
     padding: calc(0.8rem - 1px) 1.5rem;
@@ -63,7 +64,7 @@ $success: #1abc9c;
   margin: 0;
   position: absolute;
   top: 0.8rem;
-  left:0.5rem;
+  left: 0.5rem;
   transition: all 200ms ease-out;
   opacity: 0.7;
   pointer-events: none;
@@ -78,26 +79,26 @@ $success: #1abc9c;
   border: none;
   outline: none;
   position: relative;
-  background:#eef3fb;
-  border-radius:5px;
+  background: #eef3fb;
+  border-radius: 5px;
   &:focus {
-    background:none;
+    background: none;
   }
   &:placeholder-shown + #{$label} {
     top: 0.8rem;
     opacity: 0.7;
-    left:0.5rem;
+    left: 0.5rem;
   }
   &:not(:placeholder-shown) + #{$label} {
     top: -12px;
     opacity: 1;
     font-size: 86%;
-    left:0;
+    left: 0;
   }
   &:focus + #{$label} {
     font-size: 86%;
     top: -12px;
-    left:0;
+    left: 0;
     opacity: 1;
   }
   &:focus ~ #{$underline} {
@@ -118,7 +119,10 @@ $success: #1abc9c;
   transform-origin: center;
   transition: all 0.2s ease-out;
 }
-
+@mixin container {
+  max-width: 1400px;
+  margin: auto;
+}
 // for 1336 x 768
 $margin-lg: 1.875rem;
 $padding-lg: 8.6875rem;

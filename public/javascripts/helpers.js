@@ -36,6 +36,7 @@ export const logMessage = (response) => {
     messageDiv.classList.remove('messageDiv--active');
   }, 4500);
 };
+
 export const logError = (err) => {
   throw err;
 };

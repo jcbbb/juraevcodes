@@ -1,0 +1,30 @@
+[
+  {
+    "id": 0,
+    "title": "Web Design"
+  },
+  {
+    "id": 1,
+    "title": "Hosting"
+  },
+  {
+    "id": 2,
+    "title": "Web Development"
+  },
+  {
+    "id": 3,
+    "title": "Webiste Optimization"
+  },
+  {
+    "id": 4,
+    "title": "Domain Registration"
+  },
+  {
+    "id": 5,
+    "title": "SEO"
+  },
+  {
+    "id": 6,
+    "title": "Others"
+  }
+]

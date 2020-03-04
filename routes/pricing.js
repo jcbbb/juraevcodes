@@ -5,7 +5,6 @@ const testimonials = require('../public/data/testimonials.json');
 const faqs = require('../public/data/faq.json');
 
 const router = express.Router();
-router.use(express.json());
 router.get('/', (req, res) => {
   res.render('pricing', { plans, testimonials, faqs });
 });

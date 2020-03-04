@@ -3,6 +3,7 @@
   padding: 0 $padding-lg;
   display: flex;
   align-items: flex-start;
+  @include container;
 }
 .contact-information {
   box-shadow: 3px 3px 13px rgba(0, 0, 0, 0.11);
