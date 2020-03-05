@@ -1,14 +1,4 @@
-import {
-  select,
-  selectAll,
-  closeForm,
-  disableButton,
-  enableButton,
-  validate,
-  readJSON,
-  logMessage,
-  logError,
-} from './helpers.js';
+import { select, selectAll, state, log, json } from './helpers.js';
 
 (() => {
   const form = select('.pricing-form');
@@ -31,7 +21,7 @@ import {
   });
 
   pricingFormClose.addEventListener('click', () => {
-    closeForm(pricingForm);
+    state.closeForm(pricingForm);
   });
 
   // Close pricing-form when clicked outside of form
@@ -49,8 +39,8 @@ import {
   const activeBtnAndClose = (response) => {
     if (response.status) {
       setTimeout(() => {
-        enableButton(formCta);
-        closeForm(pricingForm);
+        state.enableButton(formCta);
+        state.closeForm(pricingForm);
       }, 2500);
     } else return false;
     return response;
@@ -59,7 +49,7 @@ import {
   // Send user input to handler
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    disableButton(formCta);
+    state.disableButton(formCta);
     const data = {
       name: select('input[name="name"]').value,
       email: select('input[name="email"]').value,
@@ -73,11 +63,11 @@ import {
       },
       body: JSON.stringify(data),
     };
-    fetch('/pricing', options)
-      .then(validate)
-      .then(readJSON)
+    fetch('/pricing/plan', options)
+      .then(json.validate)
+      .then(json.read)
       .then(activeBtnAndClose)
-      .then(logMessage)
-      .catch(logError);
+      .then(log.message)
+      .catch(log.error);
   });
 })();

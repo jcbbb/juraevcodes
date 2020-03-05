@@ -1,13 +1,4 @@
-import {
-  select,
-  closeForm,
-  disableButton,
-  enableButton,
-  logMessage,
-  validate,
-  readJSON,
-  logError,
-} from './helpers.js';
+import { select, state, log, json } from './helpers.js';
 
 (() => {
   const form = select('.question-form');
@@ -22,7 +13,7 @@ import {
   stillCta.addEventListener('click', showQuestionForm);
 
   questionFormClose.addEventListener('click', () => {
-    closeForm(questionFormContainer);
+    state.closeForm(questionFormContainer);
   });
   document.addEventListener('click', (e) => {
     if (e.target === questionFormContainer) {
@@ -37,15 +28,15 @@ import {
   const activeBtnAndClose = (response) => {
     if (response.status) {
       setTimeout(() => {
-        enableButton(questionFormCta);
-        closeForm(questionFormContainer);
+        state.enableButton(questionFormCta);
+        state.closeForm(questionFormContainer);
       }, 2500);
     } else return false;
     return response;
   };
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    disableButton(questionFormCta);
+    state.disableButton(questionFormCta);
     const data = {
       email: select('.question-form__input').value,
       message: select('.question-form__textarea').value,
@@ -57,11 +48,11 @@ import {
       },
       body: JSON.stringify(data),
     };
-    fetch('/pricing', options)
-      .then(validate)
-      .then(readJSON)
+    fetch('/pricing/question', options)
+      .then(json.validate)
+      .then(json.read)
       .then(activeBtnAndClose)
-      .then(logMessage)
-      .catch(logError);
+      .then(log.message)
+      .catch(log.error);
   });
 })();

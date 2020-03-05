@@ -3,28 +3,28 @@ const nodemailer = require('nodemailer');
 const plans = require('../public/data/plans.json');
 const testimonials = require('../public/data/testimonials.json');
 const faqs = require('../public/data/faq.json');
+const { USER, PASS } = require('../config/index');
 
 const router = express.Router();
 router.get('/', (req, res) => {
   res.render('pricing', { plans, testimonials, faqs });
 });
 const transporter = nodemailer.createTransport({
-  host: 'smtp.mailtrap.io',
-  port: 2525,
+  host: 'smtp.gmail.com',
+  port: 465,
   auth: {
-    user: 'c112a7cd916b32',
-    pass: 'd18481e9e8c93a',
+    user: USER,
+    pass: PASS,
   },
 });
-router.post('/', (req, res) => {
-  const {
-    name, email, phone, plan,
-  } = req.body;
+router.post('/plan', (req, res) => {
+  const { name, email, phone, plan } = req.body;
   const mailOptions = {
-    from: '"Test Server" <test@example.com',
-    to: email,
+    sender: email,
+    replyTo: email,
+    to: USER,
     subject: plan,
-    text: `${name}'s phone is ${phone}`,
+    html: `<h3><strong>Client name: </strong>${name}</h3><h3><strong>Client phone: </strong><a href=tel:${phone}>${phone}</a></h3>`,
   };
 
   transporter.sendMail(mailOptions, (err) => {
@@ -37,5 +37,24 @@ router.post('/', (req, res) => {
     msg: 'Message received. We will contact you shortly.',
   });
 });
+router.post('/question', (req, res) => {
+  const { email, message } = req.body;
+  const mailOptions = {
+    sender: email,
+    replyTo: email,
+    to: USER,
+    subject: 'QUESTION',
+    html: `<h3>${message}</h3>`,
+  };
 
+  transporter.sendMail(mailOptions, (err) => {
+    if (err) {
+      throw Error;
+    }
+  });
+  res.json({
+    status: true,
+    msg: 'Message received. We will contact you shortly.',
+  });
+});
 module.exports = router;

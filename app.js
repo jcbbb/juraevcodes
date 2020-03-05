@@ -12,7 +12,6 @@ const contactRouter = require('./routes/contact');
 const startRouter = require('./routes/start-project');
 
 const app = express();
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');

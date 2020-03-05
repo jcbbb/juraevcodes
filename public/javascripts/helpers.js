@@ -9,34 +9,45 @@ export const createElement = (tag, attributes) => {
   }
   return element;
 };
-export const closeForm = (form) => {
-  form.style.display = 'none';
+export const state = {
+  closeForm: (form) => {
+    const el = form;
+    el.style.display = 'none';
+    return el;
+  },
+  disableButton: (cta) => {
+    const btn = cta;
+    btn.innerHTML = '<i class="fa-spin fal fa-circle-notch"></i>';
+    btn.setAttribute('disabled', 'disabled');
+    return btn;
+  },
+  enableButton: (cta) => {
+    const btn = cta;
+    btn.removeChild(btn.childNodes[0]);
+    btn.textContent = 'Send';
+    btn.removeAttribute('disabled');
+    return btn;
+  },
 };
-export const disableButton = (cta) => {
-  cta.innerHTML = '<i class="fa-spin fal fa-circle-notch"></i>';
-  cta.setAttribute('disabled', 'disabled');
+export const json = {
+  read: (response) => response.json(),
+  validate: (response) => {
+    if (!response.ok) {
+      throw Error(response.statusText);
+    }
+    return response;
+  },
 };
-export const enableButton = (cta) => {
-  cta.removeChild(cta.childNodes[0]);
-  cta.textContent = 'Send';
-  cta.removeAttribute('disabled');
-};
-export const validate = (response) => {
-  if (!response.ok) {
-    throw Error(response.statusText);
-  }
-  return response;
-};
-export const readJSON = (response) => response.json();
-export const logMessage = (response) => {
-  const messageDiv = select('.messageDiv');
-  messageDiv.textContent = response.msg;
-  messageDiv.classList.add('messageDiv--active');
-  setTimeout(() => {
-    messageDiv.classList.remove('messageDiv--active');
-  }, 4500);
-};
-
-export const logError = (err) => {
-  throw err;
+export const log = {
+  error: (err) => {
+    throw err;
+  },
+  message: (response) => {
+    const messageDiv = select('.messageDiv');
+    messageDiv.textContent = response.msg;
+    messageDiv.classList.add('messageDiv--active');
+    setTimeout(() => {
+      messageDiv.classList.remove('messageDiv--active');
+    }, 4500);
+  },
 };
