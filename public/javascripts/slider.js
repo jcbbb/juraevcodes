@@ -1,6 +1,4 @@
-import {
-  select, selectAll, createElement, validate, readJSON, logError,
-} from './helpers.js';
+import { select, selectAll, createElement, json, log } from './helpers.js';
 import { lazyLoad } from './lazyload.js';
 
 (() => {
@@ -25,10 +23,10 @@ import { lazyLoad } from './lazyload.js';
         fetch('data/slides.json', {
           mode: 'no-cors',
         })
-          .then(validate)
-          .then(readJSON)
+          .then(json.validate)
+          .then(json.read)
           .then(getIDsAndMatch)
-          .catch(logError);
+          .catch(log.error);
       }
       fetchSlides();
       function getIDsAndMatch(response) {

@@ -24,8 +24,8 @@ block content
                   small(class="stepper__subtitle") Information about deadline and budget
               span(class="stepper__number")
       .stepper__form
-        form(method="post" enctype="multipart/form-data")
-          fieldset(class="fieldset")
+        form(method="post" enctype="multipart/form-data" class="step-form")
+          fieldset(class="fieldset" data-step="0")
             legend(class="fieldset__legend") General
             .field-group-container
               .field-group
@@ -46,12 +46,12 @@ block content
                     input(class="field-group__input" name="cname" placeholder=" " class="optional" value="" type="tel" id="cname" aria-required="false")
                     label(for="cname" class="field-group__label") Company name (optional)
                     span(class="field-group__underline")
-          fieldset(class="fieldset")
+          fieldset(class="fieldset" data-step="1")
             legend(class="fieldset__legend") Project
             .field-group-container
               .field-group
                 .field-group__pname
-                  input(type="text" class="field-group__input" placeholder=" " id="pname" required)
+                  input(type="text" class="field-group__input" placeholder=" " name="pname" id="pname" required)
                   label(for="pname" class="field-group__label") Project name
                   span(class="field-group__underline")
                 .field-group__services
@@ -69,12 +69,12 @@ block content
                   textarea(class="field-group__input field-group__textarea" name="description" placeholder=" " value="" id="pdescription" aria-required="true" required)
                   label(for="pdescription" class="field-group__label") Project description
                   span(class="field-group__underline")
-          fieldset(class="fieldset")
+          fieldset(class="fieldset" data-step="2")
             legend(class="fieldset__legend") Budget
             .field-group-container
               .field-group
                 .field-group__pname
-                  input(type="text" class="field-group__input" placeholder=" " id="deadline" required)
+                  input(type="text" class="field-group__input" placeholder=" " name="deadline" id="deadline" required aria-required="true")
                   label(for="deadline" class="field-group__label") Deadline
                   span(class="field-group__underline")
                 .field-group__services
@@ -85,14 +85,15 @@ block content
                         label(for=`page_${page.id}` class="field-group__label--check")= page.title
               .field-group
                 .field-group__websites
-                  input(class="field-group__input" name="websites" placeholder=" " value="" id="budget" aria-required="false")
+                  input(class="field-group__input" name="budget" placeholder=" " value="" id="budget" required aria-required="true")
                   label(for="budget" class="field-group__label") Budget in US dollars
                   span(class="field-group__underline")
                 .field-group__description
-                  input(class="field-group__input" name="description" placeholder=" " value="" id="lang" aria-required="true" required)
+                  input(class="field-group__input" name="lang" placeholder=" " value="" id="lang" aria-required="true" required)
                   label(for="lang" class="field-group__label") Website language
                   span(class="field-group__underline")
           .stepper__controls
-              button(class="fieldset__prev-btn" disabled) Prev
-              button(class="fieldset__next-btn") Next
+              button(class="fieldset__prev-btn" type="button" disabled) Prev
+              button(class="fieldset__next-btn" type="button") Next
   include includes/footer
+  script(defer src="javascripts/start-project.js" type="module")

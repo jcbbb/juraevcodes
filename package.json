@@ -33,8 +33,5 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "nodemon": "^2.0.2"
-  },
-  "engines": {
-    "node": "10.17.0"
   }
 }
